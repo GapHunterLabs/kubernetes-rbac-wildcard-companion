@@ -1,0 +1,21 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: ci-runner
+rules:
+  # Flagged: verbs wildcard on a sensitive resource -- full control over
+  # secrets, including read, for whatever pod uses this role.
+  - apiGroups: [""]
+    resources: ["secrets"]
+    verbs: ["*"]
+
+  # Flagged: resources wildcard -- covers secrets/pods-exec/
+  # clusterrolebindings too, combined with any verb.
+  - apiGroups: [""]
+    resources: ["*"]
+    verbs: ["get", "list"]
+
+  # Not flagged: specific verbs on a non-sensitive resource.
+  - apiGroups: [""]
+    resources: ["configmaps"]
+    verbs: ["get", "list", "watch"]
