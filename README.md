@@ -7,6 +7,12 @@ path to privilege escalation after a single pod is compromised in a
 cluster (OWASP Kubernetes Top 10, K03 — Overly Permissive RBAC
 Configurations).
 
+## Screenshots
+
+![Screenshot 1](docs/screenshots/Screenshot_1.png)
+
+![Screenshot 2](docs/screenshots/Screenshot_2.png)
+
 ## Why it exists
 
 RBAC manifests are hand-written YAML with no compiler and no built-in
