@@ -1,0 +1,10 @@
+<html>
+<body>
+Reports a Kubernetes <code>Role</code> or <code>ClusterRole</code> rule that combines a wildcard (<code>"*"</code>) in
+<code>verbs</code> or <code>resources</code> with a sensitive resource: <code>secrets</code>, <code>pods/exec</code> or
+<code>clusterrolebindings</code>.
+<!-- tooltip end -->
+<p>Overly permissive RBAC is the most common path from one compromised pod to the rest of the cluster (OWASP
+Kubernetes Top 10, K03). Both flow-style (<code>["secrets"]</code>) and block-style YAML lists are recognized.</p>
+</body>
+</html>
